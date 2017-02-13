@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$PROJECT_DIR$" value="1484647507994" />
-        <entry key="$PROJECT_DIR$/../leisureq-admin" value="1469516187974" />
-        <entry key="$PROJECT_DIR$/../leisureq-api" value="1469528018668" />
-        <entry key="$PROJECT_DIR$/../leisureq-batch-order" value="1473073226078" />
-        <entry key="$PROJECT_DIR$/../leisureq-front" value="1469429073292" />
-      </map>
-    </option>
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -72,7 +58,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" default="true">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

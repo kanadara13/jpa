@@ -4,16 +4,13 @@ import com.lq.demo.DemoApplication;
 import com.lq.demo.entity.Order;
 import com.lq.demo.entity.Team;
 import com.lq.demo.entity.User;
+import com.lq.demo.service.IntegrationService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.EntityManager;
 
 import static org.junit.Assert.*;
 
@@ -32,6 +29,9 @@ public class JobServiceTest {
 
     @Autowired
     OrderRepository  repository3;
+
+    @Autowired
+    IntegrationService service;
 
     @Test
     public void test() {
@@ -84,10 +84,29 @@ public class JobServiceTest {
             Order order =  new Order();
             order.setId(12L);
             repository3.save(order);
-            throw new RuntimeException();
         } catch (RuntimeException e){
             System.out.println("run time Exception");
         }
 
+    }
+
+    @Test
+    public void 인서트쿼리테스트ID직접생성(){
+        service.generateOrder();
+    }
+
+    @Test
+    public void 인서트쿼리테스트ID생성DB의존전략(){
+        service.generateUser();
+    }
+
+    @Test
+    public void 인서트쿼리직접ID생성전략시selectID쿼리는플러쉬인가(){
+        service.generateOrderAndOrder();
+    }
+
+    @Test
+    public void 인서트쿼리직접ID생성전략후자동생성전략쿼리는플러쉬인가(){
+        service.generateOrderAndUser();
     }
 }
